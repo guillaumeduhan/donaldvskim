@@ -9,7 +9,7 @@ const monServeur = express();
 const monServeurIo = require('http').createServer(monServeur);
 const socketIO = require('socket.io')(monServeurIo);
 
-const port = 5000;
+const port = process.env.PORT || 3000;
 const url = 'mongodb+srv://guillaume:86327417Gd%2E@donaldvskim-zqkaf.mongodb.net'
 // const url = 'mongodb://localhost:27017'
 const dbName = 'users'
@@ -232,6 +232,8 @@ MongoClient.connect(url, function(err, client) {
   let size = Object.keys(listeDesJoueurs).length;
 
   socketIO.on('connection', function(socket) {
+    
+    console.log('Socket.io côté serveur connecté');
 
     function globesDeVie() {
       const packageVie = new UsineCoeurs(Math.floor(Math.random() * 800) + 20 + 'px', Math.floor(Math.random() * 1000) + 20 + 'px');
