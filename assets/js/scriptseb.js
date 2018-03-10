@@ -162,7 +162,9 @@
 
       function Lave() {
         data.joueurActuel.life = data.joueurActuel.life - 4;
-        console.log(data.joueurActuel.life);
+        if (data.gameOver == false) {
+          console.log(data.joueurActuel.life);
+        }
         var div = window.document.getElementById('barre');
         div.style.width = data.joueurActuel.life + 'px';
         if (data.joueurActuel.life >= 100) {
