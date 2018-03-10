@@ -4,7 +4,7 @@
 
   window.addEventListener('DOMContentLoaded', function() {
 
-    let socketIo = io('http://localhost:8080'); // adresse io('http://192.168.1.19:3000')
+    let socketIo = io('http://localhost:5000'); // adresse io('http://192.168.1.19:3000')
 
     let data = {
       startButton: window.document.getElementById('play'),
