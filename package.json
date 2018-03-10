@@ -1,0 +1,17 @@
+{
+  "name": "Donald Vs. Kim",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "Multiplayer game by Guillaume Duhan",
+  "author": "Guillaume Duhan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^3.0.4",
+    "nodemon": "^1.17.1",
+    "path": "^0.12.7",
+    "socket.io": "^2.0.4"
+  }
+}

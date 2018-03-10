@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+  <title>Donald Trump vs. Kim Kardashian</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/master.css">
+  <link rel="icon" href="/images/logo.ico">
+  </head>
+
+  <body id="ground">
+    
+  <div id="chargement">
+    <img class="gamelogo" src="/images/st.png" alt="">
+    <div class="boutons">
+      <button id="play">Press Start</button>
+    </div>
+    <div class="footer">
+      <img id="moi" src="/images/moi2.png" alt="">
+      <p> 2018, Guillaume Duhan, fullstack dev JS.<br />I love Paris but I miss Texas.</p>
+    </div>
+  </div>
+  
+  <div id="selection">
+    <h2>Welcome to hell. You are burning. To survive, collect globes. Good luck.</h2>
+    <h2>Choose your side:</h2>
+    <img class="character_choice" id="stormy" src="/images/stormy.png" id="choice_storm" />
+    <img class="character_choice" id="kimmy" src="/images/kimmy.png" id="choice_kim" />
+    <div class="character_name">
+      <h2>Enter your name:</h2>
+      <form id="inscription">
+        <input type="text" id="player_name" minlength="4" maxlength="20">
+        <button id="enter-game" class="boutons">Let's go!</button>
+      </form>
+      </div>
+    </div>
+  </div>
+  
+  <div id="alerte">
+    <p>Your name already exists. <a href="/">Try again</a> </p>
+  </div>
+  
+  <div id="gameover">
+    <h3>Game Over. <a href="/">Try again</a> </h3>
+  </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/scriptseb.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+  </body>
+  
+</html>
