@@ -162,7 +162,7 @@
       }
 
       function Lave() {
-        data.joueurActuel.life = data.joueurActuel.life - 10;
+        data.joueurActuel.life = data.joueurActuel.life - 15;
         if (data.gameOver == false) {
           console.log(data.joueurActuel.life);
         }
@@ -174,7 +174,7 @@
           div.style.backgroundColor = data.couleurs.y;
         } else if (data.joueurActuel.life >= 1) {
           div.style.backgroundColor = data.couleurs.r;
-        } else if (data.joueurActuel.life === 0) {
+        } else if (data.joueurActuel.life <= 0) {
           console.log('joueur mort');
           GameOver();
         }
