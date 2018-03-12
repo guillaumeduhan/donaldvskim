@@ -153,7 +153,7 @@
 
         // Quand je clique sur le globe de vie, il disparaît, ma vie remonte et je gagne 1 point
         $('#' + globe.id).on('click', function() {
-          data.joueurActuel.life = data.joueurActuel.life + 30;
+          data.joueurActuel.life = data.joueurActuel.life + 60;
           data.joueurActuel.score += 1;
           $("#barreDeScore").html("<p>" + data.joueurActuel.score + " globes</p>")
           socketIo.emit('globeEnglouti', {id: globe.id});
