@@ -8,6 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/master.css">
   <link rel="icon" href="/images/logo.ico">
+  <script type="text/javascript">
+  function noSpace() {
+    if (event.keyCode == 32) {
+        return false;
+        console.log("No space key allowed.");
+    }
+  }
+  </script>
   </head>
 
   <body id="ground">
@@ -31,7 +39,7 @@
     <div class="character_name">
       <h2>Enter your name:</h2>
       <form id="inscription">
-        <input type="text" id="player_name" minlength="4" maxlength="20">
+        <input type="text" id="player_name" minlength="4" maxlength="20" onkeypress="return noSpace()">
         <button id="enter-game" class="boutons">Let's go!</button>
       </form>
       </div>

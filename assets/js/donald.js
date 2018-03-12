@@ -4,7 +4,8 @@
 
   window.addEventListener('DOMContentLoaded', function() {
 
-    let socketIo = io(); // adresse io('http://192.168.1.19:3000')
+    let socketIo = io();
+    // let socketIo = io('http://localhost:3000');
 
     let data = {
       startButton: window.document.getElementById('play'),
@@ -152,7 +153,7 @@
 
         // Quand je clique sur le globe de vie, il disparaît, ma vie remonte et je gagne 1 point
         $('#' + globe.id).on('click', function() {
-          data.joueurActuel.life = data.joueurActuel.life + 20;
+          data.joueurActuel.life = data.joueurActuel.life + 30;
           data.joueurActuel.score += 1;
           $("#barreDeScore").html("<p>" + data.joueurActuel.score + " globes</p>")
           socketIo.emit('globeEnglouti', {id: globe.id});
@@ -161,7 +162,7 @@
       }
 
       function Lave() {
-        data.joueurActuel.life = data.joueurActuel.life - 4;
+        data.joueurActuel.life = data.joueurActuel.life - 10;
         if (data.gameOver == false) {
           console.log(data.joueurActuel.life);
         }
@@ -337,3 +338,5 @@
   }); // DOMContentLoaded
 
 }(window, io)); // IIFE
+
+// Supprimer l'espace comme sélection de caractère pour le pseudo

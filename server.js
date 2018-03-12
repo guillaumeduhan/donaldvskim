@@ -240,6 +240,8 @@ MongoClient.connect(url, function(err, client) {
       socket.emit('creerUnGlobe', packageVie);
       socket.broadcast.emit('unNouveauGlobeApparait', packageVie);
     };
+    // Je déclenche les globe de survie
+    var idBallon = setInterval(globesDeVie, 3000);
 
     // Transformer en array l'objet des joueurs en ligne retournés
     listeDesJoueursArray = Object.keys(listeDesJoueurs).map(key => listeDesJoueurs[key]);
@@ -251,7 +253,7 @@ MongoClient.connect(url, function(err, client) {
     socket.on('jenvoieMonNom', function(newplayer) {
 
       // Checke si le nom existe déjà
-      liste.find({"nom": newplayer.nom}).toArray(function(err, data) {
+      scores.find({ "nom": newplayer.nom }).toArray(function(err, data) {
         // S'il existe déjà, j'empêche d'entrer
         if (data.length > 0) {
           socket.emit('pseudoDejaPris', data)
@@ -262,8 +264,6 @@ MongoClient.connect(url, function(err, client) {
           liste.insertOne({nom: newplayer.nom, kim: newplayer.kim, sid: socket.id});
           // J'ajoute le joueur à la liste des scores
           scores.insertOne({nom: newplayer.nom, score: newplayer.score, sid: socket.id});
-          // Je déclenche les globe de survie
-          setInterval(globesDeVie, 5000);
 
           // Je crée un nouveau joueur de l'autre côté avec les données envoyées (dont mon nom)
           const nom = newplayer.nom;
